@@ -20,9 +20,9 @@ long num_steps = 100000;
 	 printf("Step : %f \n" ,step);
 
 //#pragma omp parallel for reduction(+:sum) private(x) 
-#pragma omp parallel for num_threads(NUM_THREADS) reduction (+:sum) private(x)
+//#pragma omp parallel for num_threads(NUM_THREADS) reduction (+:sum) private(x)
 	
-
+#pragma omp parallel for num_threads(NUM_THREADS)
 	  for (i=0;i<= num_steps; i++){ 
 	  	if(i%2==0)
 	  		x=1.0;
